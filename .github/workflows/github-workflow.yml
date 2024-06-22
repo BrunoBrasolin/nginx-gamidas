@@ -10,6 +10,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  CI:
+  Deploy:
     uses: BrunoBrasolin/workflow-template/.github/workflows/nginx.yml@main
     secrets: inherit
