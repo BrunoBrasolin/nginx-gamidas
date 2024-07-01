@@ -8,13 +8,13 @@ services:
     volumes:
       - ../nginx/:/etc/nginx/conf.d/:ro
       - ../certbot/www/:/var/www/certbot/:ro
+    networks:
+      - default-network
   certbot:
     image: certbot/certbot:latest
     volumes:
       - /etc/app/certbot/www/:/var/www/certbot/:rw
       - /etc/app/certbot/conf/:/etc/letsencrypt/:rw
-    networks:
-      - default-network
 
 networks:
   default-network:
